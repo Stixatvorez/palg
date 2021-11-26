@@ -1,6 +1,6 @@
 from module1 import*
 palk=[1200,2500,750,395,1200]
-inimesed=["A","B","C","D","E"]
+inimesed=["Mark","Albert","Nikita","Denis","Vadim"]
 def palgad(p,i):
     valik=input("Средняя зарплата - 1,\nМинимальная зарплата - 2,\nМаксимальная зарплата - 3,\nУдалить человека - 4,\nСортировка - 5, \nДобавить человека - 6\nСвоя функция - 7.\n ")
     if valik=="1":
@@ -42,5 +42,3 @@ def palgad(p,i):
         print("С зарплатой", str(palk[-1])+'€')
     elif valik=="7":
         x,y=kalk()
-while True:
-    palgad(palk,inimesed)
