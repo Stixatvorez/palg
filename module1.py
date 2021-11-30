@@ -50,3 +50,43 @@ def keskmine(palk):
     return k
     print()
     print()
+def biggest_salary():
+    """вычисление самой большой зп
+    """
+    palgad=[]
+    with open("palgad.txt", "r") as f1:
+        for stro in f:
+            inimesed.append(stroka.strip())
+    f:close()
+    palgadS=palgad.copy()
+    palgadS.sort()
+    a=PALGADs
+    b=palgas.imdex(a)
+    print("KÕIKE SUURED PALGA ON "+INIMESED[b]+" palga")
+def kalk():
+    print("Это калькулятор) Поможет со сложными вычислениями")
+    while True:
+        print("Выберите действие которое хотите сделать:\n"
+              "Сложить: +\n"
+              "Вычесть: -\n"
+              "Умножить: *\n"
+              "Поделить: /\n"
+              "Выйти: q\n")
+        action = input("Действие: ")
+        if action == "q":
+            print("Выход из программы")
+            break
+        if action in ('+', '-', '*', '/'):
+            x = float(input("x = "))
+            y = float(input("y = "))
+            if action == '+':
+                print('%.2f + %.2f = %.2f' % (x, y, x+y))
+            elif action == '-':
+                print('%.2f - %.2f = %.2f' % (x, y, x-y))
+            elif action == '*':
+                print('%.2f * %.2f = %.2f' % (x, y, x*y))
+            elif action == '/':
+                if y != 0:
+                    print('%.2f / %.2f = %.2f' % (x, y, x/y))
+                else:
+                    print("Нельзя на 0 делить")

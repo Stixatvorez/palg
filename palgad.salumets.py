@@ -40,4 +40,4 @@ def palgad(p,i):
         print(palk)
         print("Добавлен элемент", inimesed[-1])
         print("С зарплатой", str(palk[-1])+'€')
-    
+
