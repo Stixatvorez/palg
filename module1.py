@@ -74,7 +74,7 @@ def kalk():
               "Выйти: q\n")
         action = input("Действие: ")
         if action == "q":
-            print("Выход из программы")
+            print("Выход ")
             break
         if action in ('+', '-', '*', '/'):
             x = float(input("x = "))
@@ -89,4 +89,4 @@ def kalk():
                 if y != 0:
                     print('%.2f / %.2f = %.2f' % (x, y, x/y))
                 else:
-                    print("Нельзя на 0 делить")
+                    print(" на 0 незя")
