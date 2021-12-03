@@ -1,11 +1,11 @@
-def adding():
+﻿def adding():
     #Программа добавляет в списки имя и зарплату
     #esimene arv nimi: str
     #teine arv - palk: int 
     #rtype var: str
 	nimi=input("Введите имя: ")
 	palk=input("Введите зарплату: ")
-	with open("login.txt", "a") as inimesed:
+	with open("inimesed.txt", "a") as inimesed:
 		inimesed.write(nimi+"\n")	
 	with open("palgad.txt", "a") as palgad:
 		palgad.write(palk+"\n")
@@ -16,7 +16,7 @@ def maks():
 	with open("palgad.txt", "r") as f1:
 		for stro in f1:
 			palgad.append(stro.strip())
-	f=open("login.txt", "r")
+	f=open("inimesed.txt", "r")
 	inimesed=[]
 	for stroka in f:
 		inimesed.append(stroka.strip())
@@ -34,7 +34,7 @@ def min():
 		for strok in f1:
 			palgad.append(strok.strip())
 	inimesed=[]
-	f=open("login.txt", "r")
+	f=open("inimesed.txt", "r")
 	inimesed=[]
 	for stroka in f:
 		inimesed.append(stroka.strip())
@@ -45,19 +45,18 @@ def min():
 	b=palgad.index(a)
 	print("Самая маленькая зарплата у "+inimesed[b])
 def keskmine():
-    """
-    Программа проверяет списки и выводит на экран среднюю зарплату
-    rtype var:int
-    """
-    sum=0
-    for palk in p:
-        sum+=palk
-    keskm=sum/len(p)
-    print(keskm)
-    v=0
-    if 0<p.index(keskm)<len(p)-1:
-        kesk=i(p.index(keskm))
-        return keskm
-    else:
-        print("Нет средней зарплаты")
-        return keskm
+	"""
+	"""
+	palgad,inimesed=lists()
+	summa=0
+	for palk in palgad:
+		summa+=float(palk)
+	kesk=summa/len(palgad)
+	print("keskmine palk "+kesk)
+	vahe=0
+	if kesk in palgad:
+		kesk=inimesed[palgad.index(kesk)]
+		print(kesk)
+	else:
+		kesk="puudub"
+		print(kesk)

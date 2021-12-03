@@ -1,30 +1,16 @@
 from module1 import*
-palk=[1200,2500,750,395,1200]
-inimesed=["Mark","Albert","Nikita","Denis","Vadim"]
+palk=[1200,2500,750,749,1200]
+inimesed=["Mark","Albert","Vadim","Egor","Denis"]
 def palgad(p,i):
-    valik=input("Средняя зарплата - 1,\nМинимальная зарплата - 2,\nМаксимальная зарплата - 3,\nУдалить человека - 4,\")
+    valik=input("Средняя зарплата - 1,\nМинимальная зарплата - 2,\nМаксимальная зарплата - 3,\nДобавить человека - 4\n ")
     if valik=="1":
-        kesk_palk=round(keskmine(palk),2)
-        print("Keskmine palk on ",kesk_palk)
-        print()
-        print()
+        keskmine()
     elif valik=="2":
-        m_palgad,nimi=minimum(palk,inimesed)
-        for n in nimi:
-            print(m_palgad[0], " будет получено ",n)
-            print()
-            print()
+        min()
     elif valik=="3":
-        max_palk,kto=maksimum(palk,inimesed)
-        print("Максимальная зарплата ", max_palk, " будет получено ",kto)
-        print()
-        print()
-    elif valik=="4":                                       
-        p,i=delete(palk,inimesed)
-        print(palk,inimesed)
-        if len(inimesed)==0:
-            print("Tühi list")
+        maks()
+    elif valik=="4":
+        adding()
 while True:
     palgad(palk,inimesed)
-        
         
