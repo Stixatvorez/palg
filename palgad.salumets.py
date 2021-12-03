@@ -40,8 +40,6 @@ def palgad(p,i):
         print(palk)
         print("Добавлен элемент", inimesed[-1])
         print("С зарплатой", str(palk[-1])+'€')
-    elif valik=="7":
-        x,y=kalk()
 while True:
     palgad(palk,inimesed)
         
