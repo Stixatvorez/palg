@@ -45,18 +45,19 @@ def min():
 	b=palgad.index(a)
 	print("Самая маленькая зарплата у "+inimesed[b])
 def keskmine():
-	"""
-	"""
-	palgad,inimesed=lists()
-	summa=0
-	for palk in palgad:
-		summa+=float(palk)
-	kesk=summa/len(palgad)
-	print("keskmine palk "+kesk)
-	vahe=0
-	if kesk in palgad:
-		kesk=inimesed[palgad.index(kesk)]
-		print(kesk)
-	else:
-		kesk="puudub"
-		print(kesk)
+    """
+    Программа проверяет списки и выводит на экран среднюю зарплату
+    rtype var:int
+    """
+    sum=0
+    for palgad in p:
+        sum+=palk
+    keskm=sum/len(palgad)
+    print(keskm)
+    v=0
+    if 0<p.index(keskm)<len(p)-1:
+        kesk=i(p.index(keskm))
+        return keskm
+    else:
+        print("Нет средней зарплаты")
+        return keskm
