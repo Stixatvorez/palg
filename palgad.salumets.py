@@ -2,7 +2,7 @@ from module1 import*
 palk=[1200,2500,750,395,1200]
 inimesed=["Mark","Albert","Nikita","Denis","Vadim"]
 def palgad(p,i):
-    valik=input("Средняя зарплата - 1,\nМинимальная зарплата - 2,\nМаксимальная зарплата - 3,\nУдалить человека - 4,\nСортировка - 5, \nДобавить человека - 6\nкалькулятор - 7.\n ")
+    valik=input("Средняя зарплата - 1,\nМинимальная зарплата - 2,\nМаксимальная зарплата - 3,\nУдалить человека - 4,\")
     if valik=="1":
         kesk_palk=round(keskmine(palk),2)
         print("Keskmine palk on ",kesk_palk)
@@ -24,22 +24,6 @@ def palgad(p,i):
         print(palk,inimesed)
         if len(inimesed)==0:
             print("Tühi list")
-        else:
-            for i in range(len(inimesed)):
-                print(inimesed[i]," saab kätte ", palk[i])
-    elif valik=="5":
-        p,i=sorteerimine(palk,inimesed)
-        for i in range(len(inimesed)):
-            print(inimesed[i]," будет получено ", palk[i])
-            print()
-            print()
-    elif valik=="6":                                        
-        i=adding(palk,inimesed)
-        print("Обновлённые списки: ")
-        print(inimesed)
-        print(palk)
-        print("Добавлен элемент", inimesed[-1])
-        print("С зарплатой", str(palk[-1])+'€')
 while True:
     palgad(palk,inimesed)
         
