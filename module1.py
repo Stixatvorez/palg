@@ -1,92 +1,63 @@
-def adding(palk,inimesed):
-    add=input("Имя человека:  ")
-    inimesed.append(add)
-    add_palk=int(input("Зарплата человека:  " ))
-    palk.append(add_palk)
-    return palk,inimesed
-    print()
-    print()
-def kustuta(palk,inimesed):
-    uus_palk = []; uus_inimesed = []
-    kesk = keskmine(palk)
-    for p in palk:
-        if p > kesk:
-            nr = palk.index(p)
-            uus_palk.append(p)
-            uus_inimesed.append(inimesed[nr])
-    palk.clear();inimesed.clear()
-    for i in range(len(uus_palk)):
-        palk.append(uus_palk[i])
-        inimesed.append(uus_inimesed[i])
-    return uus_palk, uus_inimesed
-
-
-def minimum(palk,inimesed):
-    m_palgad=[]
-    nimed=[]
-    min_palk=palk[0]
-    kellel=inimesed[0]
-    for p in palk:
-        if p<min_palk:
-            min_palk=p
-            i=palk.index(min_palk)
-            kellel=inimesed[i]
-    n=palk.count(min_palk)
-    palk_copy=palk.copy()
-    inimesed_copy=inimesed.copy()
-    for i in range(n):
-        j=palk_copy.index(min_palk)
-        m_palgad.append(palk_copy.pop(j))
-        nimed.append(inimesed_copy.pop(j))
-    return m_palgad, nimed
-    print()
-    print()
-def keskmine(palk):
-    summa=0
-    n=len(palk)
-    for p in palk:
-        summa+=p
-    k=summa/n
-    return k
-    print()
-    print()
-def biggest_salary():
-    """вычисление самой большой зп
+def adding():
+    #Программа добавляет в списки имя и зарплату
+    #esimene arv nimi: str
+    #teine arv - palk: int 
+    #rtype var: str
+	nimi=input("Введите имя: ")
+	palk=input("Введите зарплату: ")
+	with open("login.txt", "a") as inimesed:
+		inimesed.write(nimi+"\n")	
+	with open("palgad.txt", "a") as palgad:
+		palgad.write(palk+"\n")
+def maks():
+     #Программа проверяет списки и выводит на экран человека с максимальной зарплатой
+    #rtype var: int
+	palgad=[]
+	with open("palgad.txt", "r") as f1:
+		for stro in f1:
+			palgad.append(stro.strip())
+	f=open("login.txt", "r")
+	inimesed=[]
+	for stroka in f:
+		inimesed.append(stroka.strip())
+	f.close
+	zp=palgad.copy()
+	zp.sort()
+	a=zp[0]
+	b=palgad.index(a)
+	print("Самая большая зарплата у "+inimesed[b])
+def min():
+    #Программа проверяет списки и выводит на экран человека с самой маленькой зарплатой
+    #rtype var: int
+	palgad=[]
+	with open("palgad.txt", "r") as f1:
+		for strok in f1:
+			palgad.append(strok.strip())
+	inimesed=[]
+	f=open("login.txt", "r")
+	inimesed=[]
+	for stroka in f:
+		inimesed.append(stroka.strip())
+	zp=palgad.copy()
+	zp.sort()
+	zp.reverse()
+	a=zp[0]
+	b=palgad.index(a)
+	print("Самая маленькая зарплата у "+inimesed[b])
+def keskmine():
     """
-    palgad=[]
-    with open("palgad.txt", "r") as f1:
-        for stro in f:
-            inimesed.append(stroka.strip())
-    f:close()
-    palgadS=palgad.copy()
-    palgadS.sort()
-    a=PALGADs
-    b=palgas.imdex(a)
-    print("KÕIKE SUURED PALGA ON "+INIMESED[b]+" palga")
-def kalk():
-    print("Это калькулятор) Поможет со сложными вычислениями")
-    while True:
-        print("Выберите действие которое хотите сделать:\n"
-              "Сложить: +\n"
-              "Вычесть: -\n"
-              "Умножить: *\n"
-              "Поделить: /\n"
-              "Выйти: q\n")
-        action = input("Действие: ")
-        if action == "q":
-            print("Выход ")
-            break
-        if action in ('+', '-', '*', '/'):
-            x = float(input("x = "))
-            y = float(input("y = "))
-            if action == '+':
-                print('%.2f + %.2f = %.2f' % (x, y, x+y))
-            elif action == '-':
-                print('%.2f - %.2f = %.2f' % (x, y, x-y))
-            elif action == '*':
-                print('%.2f * %.2f = %.2f' % (x, y, x*y))
-            elif action == '/':
-                if y != 0:
-                    print('%.2f / %.2f = %.2f' % (x, y, x/y))
-                else:
-                    print(" на 0 незя")
+    Программа проверяет списки и выводит на экран среднюю зарплату
+    rtype var:int
+    """
+    sum=0
+    for palk in p:
+        sum+=palk
+    keskm=sum/len(p)
+    print(keskm)
+    v=0
+    if 0<p.index(keskm)<len(p)-1:
+        kesk=i(p.index(keskm))
+        return keskm
+    else:
+        print("Нет средней зарплаты")
+        return keskm
