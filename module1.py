@@ -46,8 +46,8 @@ def min():
 	print("Самая маленькая зарплата у "+inimesed[b])
 def keskmine():
     """
-    #проверяет списки и выводит на экран среднюю зарплату
-    #rtype var:int
+    проверяет списки и выводит на экран среднюю зарплату
+    rtype var:int
     """
     sum=0
     for palgad in p:
